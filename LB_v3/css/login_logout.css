@@ -1,0 +1,50 @@
+body{
+	background-color:#e3e7a7;
+}
+
+#content-part {
+	padding-top: 80px;
+}
+
+#logo4 {
+	width: 300px;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+
+//angela edits
+
+
+
+
+
+
+//login
+.panel.panel-info {
+	margin-top:220px !important;
+}
+
+
+//logout
+#welcome-user{
+	margin-top:50px;
+}
+#login-h1{
+	margin-top: 100px;
+	font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+
+}
+#lunchbox-text{
+    font-family: 'Lobster', cursive;
+}
+
+
+
+
+
+

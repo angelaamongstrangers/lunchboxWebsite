@@ -1,0 +1,445 @@
+<html>
+
+<head>
+    <title>Lunch Box</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+    <script src="js/widg.js"></script>
+    <script src="js/main.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700|Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/login_logout.css">
+    <link rel="stylesheet" href="css/style-v2.css">
+    <!-- <link rel="stylesheet" href="../css/logout.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/themes/tooltipster-noir.min.css">
+    <link rel="stylesheet" href="css/yibing.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top mynavbarcolor">
+            <div class="container mynavbar">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand navbar-brand-style" href="index.html">Lunchbox</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="mealplans.html">Meal Plans</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul id="loginPart" class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="index.html"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+                        </ul>
+                </div>
+                <!-- <li><a href="login/login.html"></span> Login/Sign up</a></li> -->
+                <!-- <li><p id="current-user"></p></li><li><button id="btn-logout">Log out</button></li> -->
+                </ul>
+            </div>
+    </div>
+    </nav>
+    <!--  <nav class="navbar navbar-inverse navbar-fixed-top mynavbarcolor">
+        <div class="container mynavbar">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="lunbox-text" class="navbar-brand navbar-brand-style" href="../index.html">LUNCHBOX</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../mealplans.html">Meal Plans</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    
+                </ul>
+
+             <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+                </ul>
+
+            </div>
+            
+
+        </div>
+    </nav> -->
+    <div class="container stretchy">
+        <div id="first-content">
+            <div id="welcome-user">
+                <!-- <h1 id="login-h1">Lunch Box</h1>  -->
+                <h1 id="login-h1" class="greetings">Welcome to Lunch Box 
+                 <br>
+                 <script>document.write(localStorage.getItem("Greetings"));</script></h1>
+            </div>
+        </div>
+    </div>
+    <!-- first content -->
+    <div class="first-content">
+        <img id="brand" src="images/brand.png">
+        <img class="img-responsive" id="tagline" src="images/tagline.png">
+    </div>
+    <div class="mini-content">
+        <img id="words3" src="images/mini-content.png">
+    </div>
+    <!-- end of first content -->
+    <!-- second content -->
+    <div class="second-content">
+        <img id="try" src="images/try.png">
+        <header> Drag & Drop your food choices to your lunchbox!</header>
+        <div class="range">
+            <section class="lunchbox">
+                <div class="ui-widget-content">
+                    <ol class="ui-droppable ui-sortable">
+                        <li class="placeholder"> Add our items here! </li>
+                    </ol>
+                </div>
+                <a class="save-btn" id="save-meal" href="#resetyo">SAVE</a>
+                <a class="reset-btn" id="resetyos" href="#resetyo">RESET</a>
+            </section>
+            <aside>
+                <div class="nf">
+                    <h2 class="nf_facts">Nutrition Facts</h2>
+                    <ul class="nf__table">
+                        <li>
+                            <h5 class="nf_amounts">Amount Per Serving</h5>
+                            <hr class="nf_hr">
+                            <h3>Calories</h3>
+                            <span id="value--calories">0</span>
+                        </li>
+                        <li>
+                            <h3>Total Fat</h3>
+                            <span id="value--total-fat">0</span>
+                        </li>
+                        <li>
+                            <h3>Cholesterol</h3>
+                            <span id="value--cholesterol">0</span>
+                        </li>
+                        <li>
+                            <h3>Sodium</h3>
+                            <span id="value--sodium">0</span>
+                        </li>
+                        <li>
+                            <h3>Dietary Fiber</h3>
+                            <span id="value--dietary-fiber">0</span>
+                        </li>
+                        <li>
+                            <h3>Sugar</h3>
+                            <span id="value--sugar">0</span>
+                        </li>
+                        <li>
+                            <h3>Protein</h3>
+                            <span id="value--protein">0</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <!-- end of second content -->
+    <!-- choose food content -->
+    <div class="container choose-food cont stylechoosefood">
+        <img id="choosefood" src="images/choosefood.png">
+        <div class="food-selections">
+            <ul class="nav nav-tabs stylefoodtype">
+                <li class="active"><a data-toggle="tab" href="#meat">Meat</a></li>
+                <li><a data-toggle="tab" href="#poultry">Poultry</a></li>
+                <li><a data-toggle="tab" href="#seafood">Seafood</a></li>
+                <li><a data-toggle="tab" href="#grains">Grains</a></li>
+                <li><a data-toggle="tab" href="#fruits">Fruits</a></li>
+                <li><a data-toggle="tab" href="#veg">Vegetables</a></li>
+            </ul>
+            <div class="tab-content stylefooditems">
+                <div id="meat" class="tab-pane fade in active">
+                    <ul class="meal diet-plate__container sortable">
+                        <li>
+                            <img class="icon" id="steak-tooltip" data-name="steak" data-calories="260" data-total-fat="20" data-cholesterol="70" data-sodium="55" data-dietary-fiber="0" data-sugar="0" data-protein="21" src="images/icons/grilled steak.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="lamb-tooltip" data-name="lamb" data-calories="270" data-total-fat="22" data-cholesterol="65" data-sodium="350" data-dietary-fiber="0" data-sugar="0" data-protein="16" src="images/icons/rack of lamb.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="lamb_chop-tooltip" data-name="lamb chop" data-calories="401" data-total-fat="19" data-cholesterol="173" data-sodium="131" data-dietary-fiber="0" data-sugar="0" data-protein="53" src="images/icons/lamb chop.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="pork_belly-tooltip" data-name="pork belly" data-calories="480" data-total-fat="42" data-cholesterol="90" data-sodium="700" data-dietary-fiber="0" data-sugar="0" data-protein="26" src="images/icons/pork belly.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="pork_tenderloin-tooltip" data-name="pork tenderloin" data-calories="244" data-total-fat="6" data-cholesterol="124" data-sodium="96" data-dietary-fiber="0" data-sugar="0" data-protein="44" src="images/icons/pork tenderloin.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="roast_beef-tooltip" data-name="roast beef" data-calories="424" data-total-fat="17" data-cholesterol="195" data-sodium="83" data-dietary-fiber="0" data-sugar="0" data-protein="62" src="images/icons/roast beef.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="poultry" class="tab-pane fade">
+                    <ul class="meal diet-plate__container">
+                        <li><img class="icon" id="grilled_chicken_breast-tooltip" data-name="grilled chicken breast" data-calories="275" data-total-fat="6" data-cholesterol="145" data-sodium="193" data-dietary-fiber="0" data-sugar="0" data-protein="54" src="images/icons/grilled chicken breast.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li><img class="icon" id="fried_chicken-tooltip" data-name="fried chicken" data-calories="280" data-total-fat="18" data-cholesterol="40" data-sodium="540" data-dietary-fiber="1" data-sugar="0" data-protein="13" src="images/icons/fried chicken.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li><img class="icon" id="roast_chicken_leg_quarter-tooltip" data-name="roast chicken leg quarter" data-calories="264" data-total-fat="15" data-cholesterol="105" data-sodium="99" data-dietary-fiber="0" data-sugar="0" data-protein="30" src="images/icons/roast chicken leg quarter.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li><img class="icon" id="roast_duck-tooltip" data-name="roast duck" data-calories="200" data-total-fat="10" data-cholesterol="105" data-sodium="101" data-dietary-fiber="0" data-sugar="0" data-protein="25" src="images/icons/roast duck.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li><img class="icon" id="duck_confit-tooltip" data-name="duck confit" data-calories="310" data-total-fat="20" data-cholesterol="135" data-sodium="1140" data-dietary-fiber="0" data-sugar="1" data-protein="31" src="images/icons/duck confit.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="seafood" class="tab-pane fade">
+                    <ul class="meal diet-plate__container">
+                        <li>
+                            <img class="icon" id="panseared_salmon-tooltip" data-name="pan seared salmon" data-calories="13" data-total-fat="7" data-cholesterol="12" data-sodium="20" data-dietary-fiber="10" data-sugar="5" data-protein="2" src="images/icons/roast salmon.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="baked_salmon-tooltip" data-name="baked salmon" data-calories="274" data-total-fat="19" data-cholesterol="67" data-sodium="284" data-dietary-fiber="0.5" data-sugar="0" data-protein="24" src="images/icons/pan seared salmon.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="tuna_sashimi-tooltip" data-name="tuna sashimi" data-calories="186" data-total-fat="1.8" data-cholesterol="78" data-sodium="60" data-dietary-fiber="0" data-sugar="0" data-protein="40" src="images/icons/tuna sashimi.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="salmon_sashimi-tooltip" data-name="salmon sashimi" data-calories="238" data-total-fat="13" data-cholesterol="120" data-sodium="60" data-dietary-fiber="10" data-sugar="5" data-protein="25" src="images/icons/salmon sashimi.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="grilled_mackerel-tooltip" data-name="grilled mackerel" data-calories="189" data-total-fat="12" data-cholesterol="64" data-sodium="352" data-dietary-fiber="0" data-sugar="0" data-protein="19" src="images/icons/grilled mackerel.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="calamares-tooltip" data-name="calamares" data-calories="134" data-total-fat="1.2" data-cholesterol="190" data-sodium="632" data-dietary-fiber="0" data-sugar="0" data-protein="28" src="images/icons/calamares.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="steamed_shrimp-tooltip" data-name="steamed shrimp" data-calories="42" data-total-fat="0.66" data-cholesterol="60" data-sodium="174" data-dietary-fiber="0" data-sugar="0" data-protein="8" src="images/icons/grilled shrimp.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="grains" class="tab-pane fade">
+                    <ul class="meal diet-plate__container">
+                        <li>
+                            <img class="icon" id="whole_weat_bread-tooltip" data-name="whole wheat bread" data-calories="69" data-total-fat="1" data-cholesterol="0" data-sodium="132" data-dietary-fiber="2" data-sugar="1.6" data-protein="3.6" src="images/icons/whole weat bread.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="white_bread-tooltip" data-name="white bread" data-calories="67" data-total-fat="0.8" data-cholesterol="0" data-sodium="170" data-dietary-fiber="0.6" data-sugar="1.1" data-protein="2" src="images/icons/white bread.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="brioche_bun-tooltip" data-name="brioche bun" data-calories="277" data-total-fat="7" data-cholesterol="24" data-sodium="400" data-dietary-fiber="1" data-sugar="7" data-protein="8" src="images/icons/brioche bun.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="brown_rice-tooltip" data-name="brown rice" data-calories="200" data-total-fat="1.3" data-cholesterol="0" data-sodium="0" data-dietary-fiber="1.3" data-sugar="0" data-protein="4" src="images/icons/wild rice.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="white_rice-tooltip" data-name="white rice" data-calories="182" data-total-fat="0.4" data-cholesterol="0" data-sodium="1" data-dietary-fiber="0.6" data-sugar="0.1" data-protein="4" src="images/icons/white rice.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="quinoa-tooltip" data-name="quinoa" data-calories="160" data-total-fat="2.5" data-cholesterol="0" data-sodium="0" data-dietary-fiber="3" data-sugar="0" data-protein="6" src="images/icons/quinoa.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="pasta-tooltip" data-name="pasta" data-calories="220" data-total-fat="1.3" data-cholesterol="0" data-sodium="183" data-dietary-fiber="2.5" data-sugar="1" data-protein="8" src="images/icons/pasta.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="egg_noodles-tooltip" data-name="egg noodles" data-calories="221" data-total-fat="3.3" data-cholesterol="46" data-sodium="8" data-dietary-fiber="2" data-sugar="0.6" data-protein="7.3" src="images/icons/egg noodles.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="rice_noodles-tooltip" data-name="rice noodles" data-calories="192" data-total-fat="0.4" data-cholesterol="0" data-sodium="33" data-dietary-fiber="2" data-sugar="0" data-protein="1.6" src="images/icons/rice noodles.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="wheat_crackers-tooltip" data-name="wheat crackers" data-calories="70" data-total-fat="2.5" data-cholesterol="0" data-sodium="120" data-dietary-fiber="1" data-sugar="2" data-protein="1" src="images/icons/wheat crackers.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div id="dairy" class="tab-pane fade">
+                            <ul class="meal diet-plate__container">
+                                <li><img class="icon" id="almond_milk-tooltip" data-name="almond milk" data-calories="20" data-total-fat="4" data-cholesterol="33" data-sodium="20" data-dietary-fiber="10" data-sugar="5" src="images/icons/almond milk.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li>
+                                <li><img class="icon" id="soy_milk-tooltip" data-name="soy milk" data-calories="20" data-total-fat="4" data-cholesterol="33" data-sodium="20" data-dietary-fiber="10" data-sugar="5" src="images/icons/soy milk.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li>
+                                <li><img class="icon" id="2%_Milk-tooltip" data-name="2% Milk" data-calories="20" data-total-fat="4" data-cholesterol="33" data-sodium="20" data-dietary-fiber="10" data-sugar="5" src="images/icons/2% Milk.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li>
+                                <li><img class="icon" id="Yogurt-tooltip" data-name="Yogurt" data-calories="20" data-total-fat="4" data-cholesterol="33" data-sodium="20" data-dietary-fiber="10" data-sugar="5" src="images/icons/Yogurt.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li>
+                            </ul>
+                        </div> -->
+                <div id="fruits" class="tab-pane fade">
+                    <ul class="meal diet-plate__container">
+                        <li><img class="icon" id="apple-tooltip" data-name="apple" data-calories="116" data-total-fat="0.4" data-cholesterol="0" data-sodium="2" data-dietary-fiber="5.4" data-sugar="23" data-protein="0.6" src="images/icons/apple.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="pineapple-tooltip" data-name="pineapple" data-calories="80" data-total-fat="0.5" data-cholesterol="0" data-sodium="0" data-dietary-fiber="2" data-sugar="17" data-protein="1" src="images/icons/pineapple.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="banana-tooltip" data-name="banana" data-calories="110" data-total-fat="0" data-cholesterol="0" data-sodium="0" data-dietary-fiber="3" data-sugar="19" data-protein="1" src="images/icons/banana.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="orange-tooltip" data-name="orange" data-calories="45" data-total-fat="0" data-cholesterol="0" data-sodium="0" data-dietary-fiber="2" data-sugar="9" data-protein="1" src="images/icons/orange.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="strawberry-tooltip" data-name="strawberry" data-calories="49" data-total-fat="0.5" data-cholesterol="0" data-sodium="2" data-dietary-fiber="3" data-sugar="7.4" data-protein="1" src="images/icons/strawberry.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="blueberry-tooltip" data-name="blueberry" data-calories="80" data-total-fat="0.5" data-cholesterol="0" data-sodium="10" data-dietary-fiber="4" data-sugar="17" data-protein="1" src="images/icons/blueberry.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="pomegranate-tooltip" data-name="pomegranate" data-calories="100" data-total-fat="0" data-cholesterol="0" data-sodium="0" data-dietary-fiber="1" data-sugar="21" data-protein="1" src="images/icons/pomegranate.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="watermelon-tooltip" data-name="watermelon" data-calories="80" data-total-fat="0" data-cholesterol="0" data-sodium="0" data-dietary-fiber="2" data-sugar="25" data-protein="1" src="images/icons/watermelon.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="grapes-tooltip" data-name="grapes" data-calories="60" data-total-fat="0.5" data-cholesterol="0" data-sodium="0" data-dietary-fiber="1" data-sugar="15" data-protein="1" src="images/icons/grapes.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="raisins-tooltip" data-name="raisins" data-calories="90" data-total-fat="0" data-cholesterol="0" data-sodium="5" data-dietary-fiber="2" data-sugar="20" data-protein="1" src="images/icons/raisins.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="dates-tooltip" data-name="dates" data-calories="96" data-total-fat="0" data-cholesterol="0" data-sodium="0" data-dietary-fiber="2.4" data-sugar="23" data-protein="1" src="images/icons/dates.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="veg" class="tab-pane fade">
+                    <ul class="meal diet-plate__container">
+                        <li>
+                            <img class="icon" id="steamed_brocolli-tooltip" data-name="steamed brocolli" data-calories="52" data-total-fat="2" data-cholesterol="0" data-sodium="113" data-dietary-fiber="3" data-sugar="2" data-protein="3" src="images/icons/steamed brocolli.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="spinach-tooltip" data-name="spinach" data-calories="7" data-total-fat="0" data-cholesterol="0" data-sodium="24" data-dietary-fiber="0.7" data-sugar="0.1" data-protein="1" src="images/icons/spinach.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="romaine_lettuce-tooltip" data-name="romaine lettuce" data-calories="16" data-total-fat="0.3" data-cholesterol="0" data-sodium="8" data-dietary-fiber="2" data-sugar="1" data-protein="1" src="images/icons/romaine lettuce.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="brussell_sprouts-tooltip" data-name="brussell sprouts" data-calories="104" data-total-fat="2.2" data-cholesterol="7" data-sodium="299" data-dietary-fiber="5" data-sugar="6" data-protein="5" src="images/icons/brussell sprouts.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="mushrooms-tooltip" data-name="mushrooms" data-calories="78" data-total-fat="0.3" data-cholesterol="0" data-sodium="348" data-dietary-fiber="3" data-sugar="5" data-protein="2" src="images/icons/mushrooms.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="baked_potatoes-tooltip" data-name="baked potatoes" data-calories="278" data-total-fat="0.4" data-cholesterol="0" data-sodium="730" data-dietary-fiber="6.6" data-sugar="3.5" data-protein="7.5" src="images/icons/baked potatoes.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="green_beans-tooltip" data-name="green beans" data-calories="44" data-total-fat="0.3" data-cholesterol="0" data-sodium="299" data-dietary-fiber="4" data-sugar="2" data-protein="2.4" src="images/icons/green beans.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="bell_peppers-tooltip" data-name="bell peppers" data-calories="38" data-total-fat="0.4" data-cholesterol="0" data-sodium="3" data-dietary-fiber="1.6" data-sugar="6" data-protein="1" src="images/icons/bell peppers.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="carrots-tooltip" data-name="carrots" data-calories="25" data-total-fat="0" data-cholesterol="28" data-sodium="42" data-dietary-fiber="1.5" data-sugar="3" data-protein="0.5" src="images/icons/carrots.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="asparagus-tooltip" data-name="asparagus" data-calories="20" data-total-fat="0.2" data-cholesterol="0" data-sodium="216" data-dietary-fiber="2" data-sugar="1" data-protein="2" src="images/icons/asparagus.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <!-- <li>
+                                    <img class="icon" id="onions-tooltip" data-name="onions" data-calories="2" data-total-fat="10" data-cholesterol="28" data-sodium="20" data-dietary-fiber="10" data-sugar="5" data-protein="2" src="images/icons/onions.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li> -->
+                        <!-- <li>
+                                    <img class="icon" id="garlic-tooltip" data-name="garlic" data-calories="2" data-total-fat="10" data-cholesterol="28" data-sodium="20" data-dietary-fiber="10" data-sugar="5" data-protein="2" src="images/icons/garlic.svg" alt="" />
+                                    <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                                </li> -->
+                        <li>
+                            <img class="icon" id="tomatoes-tooltip" data-name="tomatoes" data-calories="40" data-total-fat="0.5" data-cholesterol="0" data-sodium="15" data-dietary-fiber="2" data-sugar="5" data-protein="2" src="images/icons/tomatoes.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                        <li>
+                            <img class="icon" id="kale-tooltip" data-name="kale" data-calories="33" data-total-fat="0" data-cholesterol="0" data-sodium="29" data-dietary-fiber="1" data-sugar="0" data-protein="2" src="images/icons/kale.svg" alt="" />
+                            <span class="glyphicon glyphicon-remove-circle x-close" aria-hidden="true"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- tab-content -->
+        </div>
+        <!-- food-selection -->
+    </div>
+    <!-- end of choose food -->
+    <script src="js/yibing.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-75745550-3', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

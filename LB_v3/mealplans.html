@@ -1,0 +1,167 @@
+	<html>
+	<head>
+		<title>Lunchbox</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- Bootstrap core CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	    <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	    <!-- Custom styles for this template  -->
+	    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/flick/jquery-ui.css">
+	    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+	    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js"></script>
+	    <!-- <script src="js/main.js"></script> -->
+	    <script src="js/widg.js"></script>
+	    <script src="js/save.js"></script>
+	    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700|Lobster' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" type="text/css" href="css/mealplans.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css">
+	    
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/themes/tooltipster-noir.min.css">
+	   
+	</head>
+
+	<body>
+		<!--  nav bar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top mynavbarcolor">
+	        <div class="container mynavbar">
+
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand navbar-brand-style" href="index.html">Lunchbox</a>
+	            </div>
+
+	            <div id="navbar" class="collapse navbar-collapse">
+	                <ul class="nav navbar-nav">
+	                    <li><a href="index.html">Home</a></li>
+	                    <li><a href="about.html">About</a></li>
+	                    <li class="active"><a href="mealplans.html">Meal Plans</a></li>
+	                    <li><a href="contact.html">Contact</a></li>
+	                </ul>
+	                
+	                <ul id="loginPart" class="nav navbar-nav navbar-right"></ul>
+	            </div>
+	            
+	        </div>
+   		</nav>
+    	<!-- end of nav bar -->
+
+    	<!-- first content -->
+
+    	<div class="container stretchy">
+        <div id="first-content">
+
+
+            <div class="starter-template maintitle">
+               
+               <h1>Paleo Meal Plan</h1><br>
+               <p class="lead p-style">
+                The paleo diet is based on emulating the diet of our hunter-gatherer ancestors. It includes whole, unprocessed foods that resemble what they look like in nature.
+                Our ancestors were genetically the same as modern humans. They thrived eating such foods and were free of diseases like obesity, diabetes and heart disease.
+                Several studies suggest that this diet can lead to significant weight loss (without calorie counting) and major improvements in health. 
+                <br>
+                <br>
+
+                Food inclusions: lamb, beef, pork, chicken<br>
+                Food exclusions: rice, fruits, grains
+                </p>
+            </div>        
+
+        </div><!--the end of first content  -->
+
+        <div id="second-content">
+
+            <div class="starter-template maintitle">
+               
+                <h1>Raw Food Meal Plan</h1><br>
+               <p class="lead p-style">
+                The main source of protein are germinated nuts (almonds are best), seeds, grains and green leafy vegetables. I highly recommend hemp seed as an excellent source of protein. Also make sure you germinate your seeds and nuts, otherwise you're unlikely to absorb the protein.
+                How do you germinate the seeds and nuts? Just before you go to bed, you put the seeds or nuts in a cup and add purified water. The next morning they're ready to eat. (Hemp seeds are the only seeds you don't have to germinate).
+
+                <br><br>
+
+                Food inclusions: raw vegetables and fruits<br>
+                Food exclusions: pork, chicken, beef
+                </p>
+
+                   
+              
+            </div>   <!--  end of starter template -->
+
+        </div><!--the end of second content  -->
+
+        <div id="third-content">
+
+            <div class="starter-template maintitle">
+               
+                <h1>Gluten-Free Meal Plan</h1><br>
+               <p class="lead p-style">
+                Gluten-Free Meal Plans are designed by nutrition and culinary experts to offer delicious, nutritionally balanced gluten-free meals at 5 calorie levels: 1,200, 1,400, 1,600, 1,800 and 2,000. The recipes don’t include wheat, rye, barley or oats, but serving suggestions may. The plans also include some commercial gluten-free products, such as breads, cookies or pasta; the nutrition data for the particular product you choose may vary from the values included in the meal plan and you may need to adjust the calories accordingly. Lastly, always check labels for gluten-containing ingredients. 
+                <br><br>
+
+                Food inclusions: rice, meats, vegetables, fruits<br>
+                Food exclusions: bread, noodles, pasta
+                </p>
+
+                   
+              
+            </div>   <!--  end of starter template -->
+
+        </div><!--the end of second content  -->
+            
+
+    </div><!-- /.container -->
+    <div class="range options">
+        <img id="wantcopy" src="images/wantcopy.png">
+        <p><a href="signup.html"><span style="text-decoration: underline;">Sign up</span></a> for free today!</p> 
+    </div>
+
+<footer>
+    <p>
+        &copy; 2016 Lunchbox
+    </p>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75745550-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+	</body>
+
+</html>

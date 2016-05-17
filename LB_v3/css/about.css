@@ -1,0 +1,187 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #373b44;
+}
+/* NAV BAR */
+
+.navbar-inverse {
+    background-color: #e06238;
+    border-color: #373b44;
+}
+
+.navbar-header a {
+  margin-left: 0.6em;
+  font-family: 'Lobster', cursive;
+  letter-spacing: 2px;
+  color: #373b44 !important;
+  text-shadow: -2px 0px 2px rgba(115, 200, 169, 1);
+  font-size: 25px;
+}
+
+.nav.navbar-nav li a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #373b44;
+}
+
+.navbar-header button{
+  border:none;
+  margin-right: 2.1em;
+}
+
+@media(max-width:768px) {
+  .nf {
+  background-color: #e3e7a7;
+  /*border-bottom: 4px solid #73c8a9;*/
+  }
+  .nf_facts {
+    margin-left: 0.7em;
+  } 
+  #first-content {
+    height: 70em;
+  }
+    
+}
+
+/*cotnainer css*/
+
+.stretchy {
+  width: 2500px  !important;
+  max-width: 100%;
+  position: relative;
+}
+
+.container {
+     padding-right: 0!important; 
+     padding-left: 0 !important; 
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+/*first content css*/
+
+#first-content {
+  padding-top: 40px;
+/*  position: relative;*/
+  background-color: #e3e7a7;
+  max-width: 100%;
+  height: 40em;
+  width: 100%;
+  position: relative;
+  border-bottom: 5px solid #e06238;
+}
+
+.maintitle h1 {
+  text-align: center;
+  padding-top: 3em;
+}
+
+#lb {
+    display: block;
+    margin-top: 3em;
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    padding-bottom: 15px;
+}
+
+.p-style {
+  width: 860px !important;
+  text-align: left;
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto ;
+  max-width: 100%;
+}
+
+/*debugging bootstrap for search bar*/
+
+.ui-helper-hidden-accessible {
+  display: none !important;
+}
+
+.ui-autocomplete ,.ui-front ,.ui-menu, .ui-widget ,.ui-widget-content {
+  list-style: none;
+
+}
+
+.ui-autocomplete, .ui-front, .ui-menu, .ui-widget, .ui-widget-content {
+    list-style: none;
+    float: right !important;
+}
+
+.searchbox {
+     position: relative !important; 
+    padding-top: 50px;
+    padding-left: 75px;
+    float: right; 
+}
+
+/*second content*/
+
+#second-content {
+  /*padding-top: 40px;*/
+/*  position: relative;*/
+  margin-top: -1.4em;
+  background-image: url("../images/vega.jpg");
+  background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-bottom: 5px solid #e06238;
+}
+
+.range {
+    width: 100%;
+    float: left;
+}
+
+.options {
+  height: 150px;
+  background-color: #8ac2a9;
+}
+
+#wantcopy {
+  padding-top: 15px;
+  display: block;
+  margin:0 auto;
+  max-width: 100%;
+  width: 600px;
+}
+
+.range p {
+  max-width: 100%;
+  padding-top: 20px;
+  font-size: 22px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: #bd5531;
+  font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

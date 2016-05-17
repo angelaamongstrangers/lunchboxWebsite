@@ -1,0 +1,57 @@
+.current-user-li{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #373b44;
+}
+.current-user-li{
+	margin-right: 20px;
+	width: 120px;
+	margin-top:-25px;
+	
+}
+.current-user-li-btn{
+	padding-top: 10px;
+	padding-bottom: 7px;
+	font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+	
+}
+.current-user{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+
+}
+#current-user{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #373b44;
+    margin-top: 20px;
+
+}
+
+
+
+#loginPart p{
+	float: left;
+}
+#btn-logout{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #373b44;
+    margin-top:-4px;
+}
+#navbar{
+	margin-top:-10px;
+}
+/*loginPart span{
+	float: left;
+
+}*/
+
